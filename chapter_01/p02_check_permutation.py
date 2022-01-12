@@ -3,6 +3,15 @@ import unittest
 from collections import Counter
 
 
+def is_permutation(string1, string2):
+    if len(string1) != len(string2):
+        return False
+    order1, order2 = sorted(string1), sorted(string2)
+    for i in range(len(order1)):
+        if order1[i] != order2[i]:
+            return False
+        return True
+
 def check_permutation_by_sort(s1, s2):
     if len(s1) != len(s2):
         return False

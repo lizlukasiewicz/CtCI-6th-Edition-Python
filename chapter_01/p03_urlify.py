@@ -1,14 +1,15 @@
 # O(N)
 import unittest
 
-
 def urlify_algo(string, length):
     """replace spaces with %20 and removes trailing spaces"""
     # convert to list because Python strings are immutable
     char_list = list(string)
-    new_index = len(char_list)
+    #print(char_list)
+    new_index = len(char_list) # length of string in array including spaces
+    #print(new_index)
 
-    for i in reversed(range(length)):
+    for i in reversed(range(length)): #from 13 to 0
         if char_list[i] == " ":
             # Replace spaces
             char_list[new_index - 3 : new_index] = "%20"
@@ -17,8 +18,12 @@ def urlify_algo(string, length):
             # Move characters
             char_list[new_index - 1] = char_list[i]
             new_index -= 1
+    #print(char_list)
     # convert back to string
     return "".join(char_list[new_index:])
+
+test = "mr john smith      "
+#urlify_algo(test, 13)
 
 
 def urlify_pythonic(text, length):

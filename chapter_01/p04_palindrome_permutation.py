@@ -3,6 +3,18 @@ import unittest
 from collections import Counter
 
 
+# def palindrome(phrase):
+#     #remove spaces
+#     lower = phrase.lower()
+#     new = "".join(lower.split())
+#     # count letters in the whole phrase
+#     condensed = Counter(new)
+#     for letter in condensed.elements():
+test = "Able was I ere I saw Elba"
+#  palindrome(test)
+
+
+
 def is_palindrome_permutation(phrase):
     """checks if a string is a permutation of a palindrome"""
     table = [0 for _ in range(ord("z") - ord("a") + 1)]
@@ -37,32 +49,33 @@ def char_number(c):
 def is_palindrome_permutation_pythonic(phrase):
     """function checks if a string is a permutation of a palindrome or not"""
     counter = Counter(phrase.replace(" ", "").lower())
-    return sum(val % 2 for val in counter.values()) <= 1
+    print(sum(val % 2 for val in counter.values()) <= 1)
+
+is_palindrome_permutation_pythonic(test)
+
+# class Test(unittest.TestCase):
+#     test_cases = [
+#         ("aba", True),
+#         ("aab", True),
+#         ("abba", True),
+#         ("aabb", True),
+#         ("a-bba", True),
+#         ("Tact Coa", True),
+#         ("jhsabckuj ahjsbckj", True),
+#         ("Able was I ere I saw Elba", True),
+#         ("So patient a nurse to nurse a patient so", False),
+#         ("Random Words", False),
+#         ("Not a Palindrome", False),
+#         ("no x in nixon", True),
+#         ("azAZ", True),
+#     ]
+#     testable_functions = [is_palindrome_permutation, is_palindrome_permutation_pythonic]
+
+#     def test_pal_perm(self):
+#         for f in self.testable_functions:
+#             for [test_string, expected] in self.test_cases:
+#                 assert f(test_string) == expected
 
 
-class Test(unittest.TestCase):
-    test_cases = [
-        ("aba", True),
-        ("aab", True),
-        ("abba", True),
-        ("aabb", True),
-        ("a-bba", True),
-        ("Tact Coa", True),
-        ("jhsabckuj ahjsbckj", True),
-        ("Able was I ere I saw Elba", True),
-        ("So patient a nurse to nurse a patient so", False),
-        ("Random Words", False),
-        ("Not a Palindrome", False),
-        ("no x in nixon", True),
-        ("azAZ", True),
-    ]
-    testable_functions = [is_palindrome_permutation, is_palindrome_permutation_pythonic]
-
-    def test_pal_perm(self):
-        for f in self.testable_functions:
-            for [test_string, expected] in self.test_cases:
-                assert f(test_string) == expected
-
-
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()

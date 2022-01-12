@@ -34,6 +34,7 @@ def is_unique_bit_vector(string):
     checker = 0
     for c in string:
         val = ord(c)
+        #if checker & (1*(2**y)) >0
         if (checker & (1 << val)) > 0:
             return False
         checker |= 1 << val

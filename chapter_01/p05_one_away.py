@@ -2,6 +2,47 @@
 import time
 import unittest
 
+# SAME LENGTH STRING
+def same_length(string1, string2):
+    #print(string2, string1)
+    edited = False
+    for c1, c2 in zip(string1, string2):
+        if c1 != c2:
+            if edited:
+                return False
+            edited = True
+    return True
+
+# DIFFERENT LENGTH STRING
+def diff_length(string1, string2):
+    print(string1, string2)
+    edited = False
+    i, j = 0, 0
+    while i < len(string1) and j < len(string2):
+        if string1[i] != string2[j]:
+            if edited:
+                return False
+            edited = True
+            j+=1
+        else:
+            i +=1
+            j+=1
+    return True
+
+
+def single_change(string1, string2):
+    # CHECK LENGTHS OF STRING
+    if len(string1) == len(string2):
+        return same_length(string1, string2)
+    if len(string1) + 1 == len(string2):
+        return diff_length(string1, string2)
+    if len(string1) -1 == len(string2):
+        return diff_length(string1, string2)
+    return False
+
+
+
+
 
 def are_one_edit_different(s1, s2):
     """Check if a string can converted to another string with a single edit"""
