@@ -3,35 +3,13 @@ import unittest
 from copy import deepcopy
 
 
-def rotate90(n):
+def rotate90(matrix):
+    n = len(matrix)
+    iterator = n -1
     print(n)
     # clockwise or counterclockwise?
-    #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # i = row
+    # x = column
 
 
 def rotate_matrix(matrix):

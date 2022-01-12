@@ -1,7 +1,7 @@
 import unittest
 from random import randrange
 
-import pytest
+#import pytest
 
 
 class Vehicle:
@@ -83,31 +83,31 @@ class ParkZone:
             print(vehicle.model, vehicle.size, vehicle.number)
 
 
-def test_parking_lot():
-    bike = Bike("Suzuki Access", 1, "MH14AB1234")
-    assert not bike.is_parked()
-    park_zone = ParkZone()
-    token = park_zone.park(bike)
-    assert bike.is_parked()
-    assert park_zone.depark(token) == bike
-    assert not bike.is_parked()
+# def test_parking_lot():
+#     bike = Bike("Suzuki Access", 1, "MH14AB1234")
+#     assert not bike.is_parked()
+#     park_zone = ParkZone()
+#     token = park_zone.park(bike)
+#     assert bike.is_parked()
+#     assert park_zone.depark(token) == bike
+#     assert not bike.is_parked()
 
-    car = Car("Honda Jazz", 5, "MU268A")
-    assert not car.is_parked()
-    car_token = park_zone.park(car)
-    assert car.is_parked()
-    with pytest.raises(ValueError, match="Invalid token or vehicle not found"):
-        park_zone.depark(token)
+#     car = Car("Honda Jazz", 5, "MU268A")
+#     assert not car.is_parked()
+#     car_token = park_zone.park(car)
+#     assert car.is_parked()
+#     with pytest.raises(ValueError, match="Invalid token or vehicle not found"):
+#         park_zone.depark(token)
 
-    assert park_zone.depark(car_token) == car
-    assert not car.is_parked()
+#     assert park_zone.depark(car_token) == car
+#     assert not car.is_parked()
 
-    bus = Bus("Volvo", 5, "AN657")
-    park_zone.park(bus)
+#     bus = Bus("Volvo", 5, "AN657")
+#     park_zone.park(bus)
 
-    scooter = Scooter("Honda Activa", 1, "GI653")
-    park_zone.park(scooter)
-    park_zone.list_parked_vehicles()
+#     scooter = Scooter("Honda Activa", 1, "GI653")
+#     park_zone.park(scooter)
+#     park_zone.list_parked_vehicles()
 
 
 if __name__ == "__main__":
