@@ -10,7 +10,8 @@ from collections import Counter
 #     # count letters in the whole phrase
 #     condensed = Counter(new)
 #     for letter in condensed.elements():
-test = "Able was I ere I saw Elba"
+
+test = "A man, a plan, a canal: Panama"
 #  palindrome(test)
 
 
@@ -45,13 +46,14 @@ def char_number(c):
         return val - upper_a
     return -1
 
+print(is_palindrome_permutation(test))
 
 def is_palindrome_permutation_pythonic(phrase):
     """function checks if a string is a permutation of a palindrome or not"""
     counter = Counter(phrase.replace(" ", "").lower())
     print(sum(val % 2 for val in counter.values()) <= 1)
 
-is_palindrome_permutation_pythonic(test)
+#is_palindrome_permutation_pythonic(test)
 
 # class Test(unittest.TestCase):
 #     test_cases = [
