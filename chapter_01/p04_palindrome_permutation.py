@@ -11,7 +11,7 @@ from collections import Counter
 #     condensed = Counter(new)
 #     for letter in condensed.elements():
 
-test = "A man, a plan, a canal: Panama"
+test = "race a car"
 #  palindrome(test)
 
 
@@ -53,7 +53,7 @@ def is_palindrome_permutation_pythonic(phrase):
     counter = Counter(phrase.replace(" ", "").lower())
     print(sum(val % 2 for val in counter.values()) <= 1)
 
-#is_palindrome_permutation_pythonic(test)
+is_palindrome_permutation_pythonic(test)
 
 # class Test(unittest.TestCase):
 #     test_cases = [
