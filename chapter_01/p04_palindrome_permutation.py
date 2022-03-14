@@ -1,5 +1,5 @@
 # O(N)
-import unittest
+#import unittest
 from collections import Counter
 
 
@@ -11,7 +11,7 @@ from collections import Counter
 #     condensed = Counter(new)
 #     for letter in condensed.elements():
 
-test = "race a car"
+test = "race a ecar"
 #  palindrome(test)
 
 
@@ -46,7 +46,7 @@ def char_number(c):
         return val - upper_a
     return -1
 
-print(is_palindrome_permutation(test))
+#print(is_palindrome_permutation(test))
 
 def is_palindrome_permutation_pythonic(phrase):
     """function checks if a string is a permutation of a palindrome or not"""
